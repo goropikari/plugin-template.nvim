@@ -5,10 +5,11 @@ nvim:
 .PHONY: fmt
 fmt:
 	stylua -g '*.lua' -- .
+	dprint fmt
 
 .PHONY: lint
 lint:
-	typos -w
+	typos
 
 .PHONY: check
 check: lint fmt
