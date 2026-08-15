@@ -12,7 +12,7 @@ Thumbs.db
 *.swp
 *.swo
 *~
-.luarc.json
+.tools/
 
 # Dependencies and generated files
 deps/

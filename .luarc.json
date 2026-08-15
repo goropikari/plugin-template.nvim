@@ -1,0 +1,17 @@
+{
+  "runtime.version": "LuaJIT",
+  "runtime.builtin": {
+    "vim": "enable"
+  },
+  "diagnostics.globals": [
+    "vim"
+  ],
+  "workspace.checkThirdParty": "Disable",
+  "diagnostics.severity": {
+    "undefined-global": "Warning",
+    "undefined-field": "Warning",
+    "missing-fields": "Warning",
+    "param-type-mismatch": "Error",
+    "return-type-mismatch": "Error"
+  }
+}
