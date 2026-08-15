@@ -38,8 +38,8 @@ make lint
 # lint と整形を実行
 make check
 
-# Lua Language Server を初回セットアップ
-make install-lua-language-server
+# 開発用ツールを初回セットアップ（PATH にないツールだけ取得）
+make install-tools
 ```
 
-現時点で自動テスト suite はありません。コード変更後は Lua Language Server をセットアップしたうえで、少なくとも `make lint` と `make fmt` を実行し、Lua の変更は `make nvim` で手動確認してください。
+現時点で自動テスト suite はありません。PATH 上に開発用ツールがない場合は `make install-tools` でセットアップしたうえで、少なくとも `make lint` と `make fmt` を実行し、Lua の変更は `make nvim` で手動確認してください。
