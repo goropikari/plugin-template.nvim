@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-placeholder='sample'
+placeholder='template'
 plugin_name="${1:-}"
 
 if [[ -z "$plugin_name" ]]; then
@@ -32,11 +32,11 @@ if [[ -z "$remote_url" ]]; then
 fi
 
 case "$remote_url" in
-  */plugin-template.nvim|*:plugin-template.nvim|*/plugin-template.nvim.git|*:plugin-template.nvim.git)
-    new_remote_url="${remote_url/plugin-template.nvim/$plugin_name.nvim}"
+  */template.nvim|*:template.nvim|*/template.nvim.git|*:template.nvim.git)
+    new_remote_url="${remote_url/template.nvim/$plugin_name.nvim}"
     ;;
   *)
-    echo "origin does not point to plugin-template.nvim: $remote_url" >&2
+    echo "origin does not point to template.nvim: $remote_url" >&2
     exit 1
     ;;
 esac
@@ -45,7 +45,7 @@ script_path='scripts/rename-plugin.sh'
 while IFS= read -r -d '' file; do
   [[ "$file" == "$script_path" ]] && continue
   if git grep -Il -e "$placeholder" -- "$file" >/dev/null 2>&1; then
-    perl -0pi -e 's/\Qsample\E/'"$plugin_name"'/g' -- "$file"
+    perl -0pi -e 's/\Qtemplate\E/'"$plugin_name"'/g' -- "$file"
   fi
 done < <(git ls-files -z)
 

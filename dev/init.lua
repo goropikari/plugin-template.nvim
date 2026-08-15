@@ -3,4 +3,4 @@ vim.o.number = true
 
 vim.opt.runtimepath:prepend(vim.fn.getcwd())
 
-require('sample').setup()
+require('template').setup()
