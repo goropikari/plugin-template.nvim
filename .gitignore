@@ -2,3 +2,21 @@
 todo.md
 
 .claude/worktrees
+.implementation-orchestrator
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor and Neovim files
+*.swp
+*.swo
+*~
+.luarc.json
+
+# Dependencies and generated files
+deps/
+node_modules/
+dist/
+build/
+coverage/

@@ -2,6 +2,10 @@
 nvim:
 	nvim -u $(CURDIR)/dev/init.lua
 
+.PHONY: rename
+rename:
+	./scripts/rename-plugin.sh $(PLUGIN_NAME)
+
 .PHONY: fmt
 fmt:
 	stylua -g '*.lua' -- .
